@@ -35,8 +35,10 @@
 		});
 	};
 	
-	$(".charsleft-input").charsLeft({
-		'source':'input',
-		'dest':".count"
-	});
+    $(document).ready(function(evt) {
+        $(".charsleft-input").charsLeft({
+            'source':'input',
+            'dest':".count"
+        });
+    });
 })(django.jQuery);
