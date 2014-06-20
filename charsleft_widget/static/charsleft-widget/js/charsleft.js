@@ -1,19 +1,18 @@
-jQuery(function($){
+(function($){
 	
 	$.fn.charsLeft = function(options){
 	
 		var defaults = {	
 			'source':'input',
-			'dest':'.count',
-		}
-		var options = $.extend(defaults, options);
+			'dest':'.count'
+		};
+		var _options = $.extend(defaults, options);
 		
 		var calculate = function(source, dest, maxlength){
 			var remaining = maxlength - source.val().length;
 			dest.html(remaining);
 			/* Over 50%, change colour to orange */
 			p=(100*remaining)/maxlength;
-			console.log(p)
 			if(p<25){
 				dest.addClass('orange');
 			}else if(p<50){
@@ -25,19 +24,19 @@ jQuery(function($){
 		 	
 		this.each(function(i, el) {
 			var maxlength = $(this).find('.maxlength').html();
-			var dest = $(this).find(options.dest);
-			var source = $(this).find(options.source);
+			var dest = $(this).find(_options.dest);
+			var source = $(this).find(_options.source);
 			source.keyup(function(){
-				calculate(source, dest, maxlength)
+				calculate(source, dest, maxlength);
 			});
 			source.change(function(){
-				calculate(source, dest, maxlength)
+				calculate(source, dest, maxlength);
 			});
 		});
 	};
 	
 	$(".charsleft-input").charsLeft({
 		'source':'input',
-		'dest':".count",
+		'dest':".count"
 	});
-});
+})(django.jQuery);
