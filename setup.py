@@ -16,8 +16,8 @@ setup(
     author_email='timmy@pastylegs.com',
     url='https://github.com/pastylegs/django-charsleft-widget',
     packages=find_packages(),
+    package_dir = {'charsleft_widget': 'charsleft_widget'},
     package_data = {
-        'charsleft_widget': [
-        ],
+        'charsleft_widget': ['static/*/*/*'],
     },
 )
